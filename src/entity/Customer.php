@@ -4,10 +4,11 @@ namespace App\Entity;
 
 class Customer
 {
+    private Address $address;
+
     public function __construct(
         private string $id,
         private string $name,
-        private string $address,
         private bool $active = true
     ) { }
 
@@ -24,5 +25,10 @@ class Customer
     public function deactivate(): void
     {
         $this->active = false;
+    }
+
+    public function setAddress(Address $address): void
+    {
+        $this->address = $address;
     }
 }
