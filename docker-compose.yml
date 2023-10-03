@@ -9,7 +9,6 @@ services:
         tty: true
         volumes:
             - .:/app
-            - app:/app
     composer:
         image: composer:latest
         working_dir: /app
@@ -17,8 +16,4 @@ services:
         entrypoint: sh
         tty: true
         volumes:
-            - app:/app
-
-volumes:
-    app:
-        driver: local
+            - .:/app
