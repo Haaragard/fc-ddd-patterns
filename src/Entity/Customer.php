@@ -4,7 +4,7 @@ namespace App\Entity;
 
 class Customer
 {
-    private Address $address;
+    private ?Address $address = null;
 
     public function __construct(
         private string $id,
