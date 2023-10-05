@@ -13,5 +13,31 @@ class Order
         private string $id,
         private string $customerId,
         private array $items
-    ) {}
+    ) {
+        $this->validate();
+    }
+
+    public function total(): int
+    {
+        return (int) array_reduce(
+            array: $this->items,
+            callback: fn (int $acumulator, OrderItem $item) => $acumulator + $item->getPrice(),
+            initial: 0
+        );
+    }
+
+    private function validate(): void
+    {
+        if (empty($this->id)) {
+            throw new \Exception('Id is required');
+        }
+
+        if (empty($this->customerId)) {
+            throw new \Exception('Customer Id is required');
+        }
+
+        if (empty($this->items)) {
+            throw new \Exception('Items are required');
+        }
+    }
 }
