@@ -17,6 +17,7 @@ class OrderTest extends TestCase
 
         $orderItem1 = new OrderItem(
             id: '1',
+            productId: '1',
             name: 'Order Item 1',
             quantity: 1,
             price: 100
@@ -41,6 +42,7 @@ class OrderTest extends TestCase
         // Arrange
         $orderItem1 = new OrderItem(
             id: '1',
+            productId: '1',
             name: 'Order Item 1',
             quantity: 1,
             price: 100
@@ -78,6 +80,7 @@ class OrderTest extends TestCase
         // Arrange
         $orderItem1 = new OrderItem(
             id: '1',
+            productId: '1',
             name: 'Order Item 1',
             quantity: 3,
             price: 100
@@ -85,6 +88,7 @@ class OrderTest extends TestCase
 
         $orderItem2 = new OrderItem(
             id: '2',
+            productId: '1',
             name: 'Order Item 2',
             quantity: 2,
             price: 200
