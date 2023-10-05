@@ -18,6 +18,7 @@ class OrderTest extends TestCase
         $orderItem1 = new OrderItem(
             id: '1',
             name: 'Order Item 1',
+            quantity: 1,
             price: 100
         );
 
@@ -41,6 +42,7 @@ class OrderTest extends TestCase
         $orderItem1 = new OrderItem(
             id: '1',
             name: 'Order Item 1',
+            quantity: 1,
             price: 100
         );
 
@@ -77,12 +79,14 @@ class OrderTest extends TestCase
         $orderItem1 = new OrderItem(
             id: '1',
             name: 'Order Item 1',
+            quantity: 3,
             price: 100
         );
 
         $orderItem2 = new OrderItem(
             id: '2',
             name: 'Order Item 2',
+            quantity: 2,
             price: 200
         );
 
@@ -94,6 +98,6 @@ class OrderTest extends TestCase
         );
 
         // Assert
-        $this->assertEquals(300, $order->total());
+        $this->assertEquals(700, $order->total());
     }
 }
