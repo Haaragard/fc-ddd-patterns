@@ -21,7 +21,7 @@ class Order
     {
         return (int) array_reduce(
             array: $this->items,
-            callback: fn (int $acumulator, OrderItem $item) => $acumulator + $item->getPrice(),
+            callback: fn (int $acumulator, OrderItem $item) => $acumulator + $item->getTotalPrice(),
             initial: 0
         );
     }
