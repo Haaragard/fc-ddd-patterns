@@ -9,4 +9,9 @@ class OrderItem
         private string $name,
         private int $price
     ) {}
+
+    public function getPrice(): int
+    {
+        return $this->price;
+    }
 }
