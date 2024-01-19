@@ -7,6 +7,7 @@ use Exception;
 class Customer
 {
     private ?Address $address = null;
+    private int $rewardPoints = 0;
 
     /**
      * @throws Exception
@@ -54,6 +55,23 @@ class Customer
     public function setAddress(Address $address): void
     {
         $this->address = $address;
+    }
+
+    public function getRewardPoints(): int
+    {
+        return $this->rewardPoints;
+    }
+
+    /**
+     * @throws Exception
+     */
+    public function addRewardPoints(int $value): void
+    {
+        if ($value <= 0) {
+            throw new Exception('Cannot add zero or negative reward points');
+        }
+
+        $this->rewardPoints += $value;
     }
 
     /**

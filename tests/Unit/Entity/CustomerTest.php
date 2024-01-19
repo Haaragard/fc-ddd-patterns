@@ -102,4 +102,31 @@ final class CustomerTest extends TestCase
 
         $this->assertFalse($customer->isActive());
     }
+
+    public function test_should_add_reward_points()
+    {
+        $customer = new Customer('1', 'Customer 1');
+
+        $customer->addRewardPoints(100);
+
+        $this->assertEquals(100, $customer->getRewardPoints());
+    }
+
+    public function test_should_throw_exception_when_adding_zero_reward_points()
+    {
+        $this->expectException(Exception::class);
+
+        $customer = new Customer('1', 'Customer 1');
+
+        $customer->addRewardPoints(0);
+    }
+
+    public function test_should_throw_exception_when_adding_negative_reward_points()
+    {
+        $this->expectException(Exception::class);
+
+        $customer = new Customer('1', 'Customer 1');
+
+        $customer->addRewardPoints(-100);
+    }
 }
