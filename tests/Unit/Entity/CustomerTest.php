@@ -61,6 +61,7 @@ final class CustomerTest extends TestCase
     {
         $this->expectException(Exception::class);
         $this->expectExceptionMessage('Address is mandatory to activate a customer');
+
         $customer = new Customer(
             id: '1',
             name: 'Customer 1'
@@ -115,6 +116,7 @@ final class CustomerTest extends TestCase
     public function test_should_throw_exception_when_adding_zero_reward_points()
     {
         $this->expectException(Exception::class);
+        $this->expectExceptionMessage('Cannot add zero or negative reward points');
 
         $customer = new Customer('1', 'Customer 1');
 
@@ -124,6 +126,7 @@ final class CustomerTest extends TestCase
     public function test_should_throw_exception_when_adding_negative_reward_points()
     {
         $this->expectException(Exception::class);
+        $this->expectExceptionMessage('Cannot add zero or negative reward points');
 
         $customer = new Customer('1', 'Customer 1');
 
