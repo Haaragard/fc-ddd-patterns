@@ -9,6 +9,16 @@ use PHPUnit\Framework\TestCase;
 
 final class CustomerTest extends TestCase
 {
+    public function test_should_get_id(): void
+    {
+        $customer = new Customer(
+            id: '1',
+            name: 'Name'
+        );
+
+        $this->assertEquals('1', $customer->getId());
+    }
+
     public function test_should_throw_error_when_id_is_empty(): void
     {
         $this->expectException(Exception::class);

@@ -20,6 +20,11 @@ class Customer
         $this->validate();
     }
 
+    public function getId(): string
+    {
+        return $this->id;
+    }
+
     public function getName(): string
     {
         return $this->name;
