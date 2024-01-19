@@ -2,10 +2,15 @@
 
 namespace App\Entity;
 
+use Exception;
+
 class Product
 {
+    /**
+     * @throws Exception
+     */
     public function __construct(
-        private string $id,
+        private readonly string $id,
         private string $name,
         private int $price
     ) {
@@ -22,18 +27,31 @@ class Product
         $this->name = $name;
     }
 
+    public function changePrice(int $price): void
+    {
+        $this->price = $price;
+    }
+
+    public function getPrice(): int
+    {
+        return $this->price;
+    }
+
+    /**
+     * @throws Exception
+     */
     private function validate(): void
     {
         if (empty($this->id)) {
-            throw new \Exception('Id is required');
+            throw new Exception('Id is required');
         }
 
         if (empty($this->name)) {
-            throw new \Exception('Name is required');
+            throw new Exception('Name is required');
         }
 
         if ($this->price <= 0) {
-            throw new \Exception('Price must be greater than zero');
+            throw new Exception('Price must be greater than zero');
         }
     }
 }

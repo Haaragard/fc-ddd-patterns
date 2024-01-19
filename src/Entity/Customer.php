@@ -8,8 +8,11 @@ class Customer
 {
     private ?Address $address = null;
 
+    /**
+     * @throws Exception
+     */
     public function __construct(
-        private string $id,
+        private readonly string $id,
         private string $name,
         private bool $active = true
     ) {
@@ -26,6 +29,9 @@ class Customer
         $this->name = $name;
     }
 
+    /**
+     * @throws Exception
+     */
     public function activate(): void
     {
         if (is_null($this->address)) {
@@ -50,6 +56,9 @@ class Customer
         $this->address = $address;
     }
 
+    /**
+     * @throws Exception
+     */
     private function validate(): void
     {
         if (empty($this->id)) {

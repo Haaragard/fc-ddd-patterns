@@ -3,8 +3,11 @@
 namespace App\Entity;
 use Exception;
 
-class Address
+readonly class Address
 {
+    /**
+     * @throws Exception
+     */
     public function __construct(
         private string $street,
         private int $number,
@@ -17,7 +20,7 @@ class Address
     /**
      * @throws Exception
      */
-    public function validate(): void
+    private function validate(): void
     {
         if (empty($this->street)) {
             throw new Exception("Street is required");
