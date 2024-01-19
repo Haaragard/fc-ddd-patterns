@@ -90,4 +90,20 @@ class ProductTest extends TestCase
         // Assert
         $this->assertEquals('Product 1 Name Changed', $product->getName());
     }
+
+    public function test_should_change_price(): void
+    {
+        // Arrange
+        $product = new Product(
+            id: '1',
+            name: 'Product 1',
+            price: 10
+        );
+
+        // Act
+        $product->changePrice(30);
+
+        // Assert
+        $this->assertEquals(30, $product->getPrice());
+    }
 }

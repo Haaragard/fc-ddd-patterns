@@ -155,7 +155,7 @@ class OrderItemTest extends TestCase
         // Assert
         $this->assertIsObject($orderItem);
     }
-    
+
     public function test_should_get_quantity_successfully(): void
     {
         // Arrange
