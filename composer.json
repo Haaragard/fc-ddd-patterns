@@ -23,5 +23,11 @@
         "scripts": {
             "test": "./vendor/bin/phpunit ./tests"
         }
-    }
+    },
+  "require": {
+    "ext-sqlite3": "*",
+    "ext-pdo": "*",
+        "doctrine/orm": "^2.17",
+        "symfony/cache": "^7.0"
+  }
 }
