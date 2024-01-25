@@ -5,7 +5,6 @@ namespace App\Infrastructure\Repository;
 use App\Domain\Entity\BaseEntity;
 use App\Domain\Repository\RepositoryInterface;
 use App\Infrastructure\Database\BaseModel;
-use App\Infrastructure\Database\Connection;
 use Doctrine\ORM\EntityManagerInterface;
 
 abstract class Repository implements RepositoryInterface
