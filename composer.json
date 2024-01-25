@@ -27,8 +27,8 @@
   "require": {
     "ext-sqlite3": "*",
     "ext-pdo": "*",
-        "doctrine/orm": "^2.17",
-        "symfony/cache": "^7.0",
-        "ramsey/uuid-doctrine": "^2.0"
+    "doctrine/orm": "^2.17",
+    "symfony/cache": "^7.0",
+    "ramsey/uuid-doctrine": "^2.0"
   }
 }
