@@ -7,11 +7,11 @@ use Doctrine\ORM\ORMSetup;
 \Doctrine\DBAL\Types\Type::addType('uuid', 'Ramsey\Uuid\Doctrine\UuidType');
 
 $paths = [BASE_PATH . '/src/Infrastructure/Database/Doctrine/Model'];
-$isDevMode = $_ENV['APP_ENV'] === 'develop';
+$isDevMode = in_array($_ENV['APP_ENV'], ['develop', 'testing']);
 
 $dbParams = [
     'driver' => $_ENV['DB_CONNECTION'],
-    'path' => $isDevMode ? $_ENV['DB_URL'] : BASE_PATH . $_ENV['DB_URL']
+    'path' => $_ENV['DB_URL'] === ':memory:' ? $_ENV['DB_URL'] : BASE_PATH . $_ENV['DB_URL']
 ];
 
 $config = ORMSetup::createAttributeMetadataConfiguration($paths, $isDevMode);
