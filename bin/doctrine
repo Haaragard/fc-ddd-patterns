@@ -1,16 +1,12 @@
 #!/usr/bin/env php
 <?php declare(strict_types=1);
 
-const BASE_PATH = __DIR__ . '/../';
-
 // Adjust this path to your actual bootstrap.php
 require_once BASE_PATH . '/config/bootstrap.php';
 
 use Doctrine\ORM\Tools\Console\ConsoleRunner;
 use Doctrine\ORM\Tools\Console\EntityManagerProvider\SingleManagerProvider;
 
-
-
 ConsoleRunner::run(
-    new SingleManagerProvider($entityManager)
+    new SingleManagerProvider(get_entity_manager())
 );
