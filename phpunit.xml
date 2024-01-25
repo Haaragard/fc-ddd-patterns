@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<phpunit bootstrap = "/config/bootstrap.php"
+         backupGlobals               = "false"
+         colors                      = "true"
+         processIsolation            = "false"
+         stopOnFailure               = "false"
+         displayDetailsOnTestsThatTriggerErrors="true"
+         displayDetailsOnTestsThatTriggerNotices="true"
+         displayDetailsOnTestsThatTriggerWarnings="true">
+
+    <testsuites>
+        <testsuite name="Project Test Suite">
+            <directory>tests</directory>
+        </testsuite>
+    </testsuites>
+
+    <php>
+        <env name="APP_ENV" value="testing"/>
+        <env name="DB_CONNECTION" value="pdo_sqlite"/>
+        <env name="DB_URL" value=":memory:"/>
+    </php>
+
+</phpunit>
