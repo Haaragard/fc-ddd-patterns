@@ -2,7 +2,4 @@
 .phpunit.result.cache
 /database/*.sqlite
 /*.iml
-/:memory:
-/.idea/codeception.xml
-/.idea/dataSources.xml
-/.idea/phpspec.xml
+/.idea
