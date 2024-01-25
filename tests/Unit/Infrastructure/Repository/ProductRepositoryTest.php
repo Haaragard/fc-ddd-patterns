@@ -17,6 +17,7 @@ class ProductRepositoryTest extends DatabaseTestCase
 
         $this->repository = new ProductRepository($this->getEntityManager());
     }
+
     public function test_should_create_a_product(): void
     {
         $product = new Product(
@@ -30,5 +31,25 @@ class ProductRepositoryTest extends DatabaseTestCase
         $createdProduct = $this->repository->find($product->getId());
 
         $this->assertEquals($createdProduct->toArray(), $product->toArray());
+    }
+
+    public function test_should_update_a_product(): void
+    {
+        $product = new Product(
+            id: null,
+            name: 'Product 1',
+            price: 100
+        );
+
+        $this->repository->create($product);
+
+        $product->changeName('Product 1 New Name');
+        $product->changePrice(200);
+
+        $this->repository->update($product);
+
+        $updatedProduct = $this->repository->find($product->getId());
+
+        $this->assertEquals($updatedProduct->toArray(), $product->toArray());
     }
 }
