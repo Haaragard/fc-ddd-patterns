@@ -1,8 +1,8 @@
 <?php
 
-namespace App\Service;
+namespace App\Domain\Service;
 
-use App\Entity\Product;
+use App\Domain\Entity\Product;
 
 class ProductService
 {

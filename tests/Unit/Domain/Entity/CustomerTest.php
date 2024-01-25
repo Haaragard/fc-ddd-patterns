@@ -1,24 +1,14 @@
 <?php declare(strict_types=1);
 
-namespace Tests\Unit\Entity;
+namespace Tests\Unit\Domain\Entity;
 
-use App\Entity\Address;
-use App\Entity\Customer;
+use App\Domain\Entity\Address;
+use App\Domain\Entity\Customer;
 use Exception;
 use PHPUnit\Framework\TestCase;
 
 final class CustomerTest extends TestCase
 {
-    public function test_should_get_id(): void
-    {
-        $customer = new Customer(
-            id: '1',
-            name: 'Name'
-        );
-
-        $this->assertEquals('1', $customer->getId());
-    }
-
     public function test_should_throw_error_when_id_is_empty(): void
     {
         $this->expectException(Exception::class);

@@ -1,10 +1,10 @@
 <?php declare(strict_types=1);
 
-namespace App\Entity;
+namespace App\Domain\Entity;
 
 use Exception;
 
-class Order
+class Order extends BaseEntity
 {
     /**
      * @param string $id
@@ -13,9 +13,9 @@ class Order
      * @throws Exception
      */
     public function __construct(
-        private readonly string $id,
-        private readonly string $customerId,
-        private readonly array $items
+        private ?string $id = null,
+        private string $customerId,
+        private array $items
     ) {
         $this->validate();
     }

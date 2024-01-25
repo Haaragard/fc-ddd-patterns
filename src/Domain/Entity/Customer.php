@@ -1,10 +1,10 @@
 <?php declare(strict_types=1);
 
-namespace App\Entity;
+namespace App\Domain\Entity;
 
 use Exception;
 
-class Customer
+class Customer extends BaseEntity
 {
     private ?Address $address = null;
     private int $rewardPoints = 0;
@@ -13,14 +13,14 @@ class Customer
      * @throws Exception
      */
     public function __construct(
-        private readonly string $id,
+        private ?string $id = null,
         private string $name,
         private bool $active = true
     ) {
         $this->validate();
     }
 
-    public function getId(): string
+    public function getId(): mixed
     {
         return $this->id;
     }

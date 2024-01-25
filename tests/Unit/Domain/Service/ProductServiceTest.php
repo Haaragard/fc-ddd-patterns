@@ -1,12 +1,12 @@
 <?php declare(strict_types=1);
 
-namespace Tests\Unit\Service;
+namespace Tests\Unit\Domain\Service;
 
-use App\Entity\Product;
-use App\Service\ProductService;
-use Tests\TestBase;
+use App\Domain\Entity\Product;
+use App\Domain\Service\ProductService;
+use Tests\TestCase;
 
-class ProductServiceTest extends TestBase
+class ProductServiceTest extends TestCase
 {
     private ProductService $productService;
 

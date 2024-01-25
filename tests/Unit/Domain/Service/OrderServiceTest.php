@@ -1,11 +1,11 @@
 <?php
 
-namespace Tests\Unit\Service;
+namespace Tests\Unit\Domain\Service;
 
-use App\Entity\Customer;
-use App\Entity\Order;
-use App\Entity\OrderItem;
-use App\Service\OrderService;
+use App\Domain\Entity\Customer;
+use App\Domain\Entity\Order;
+use App\Domain\Entity\OrderItem;
+use App\Domain\Service\OrderService;
 use Exception;
 use PHPUnit\Framework\TestCase;
 

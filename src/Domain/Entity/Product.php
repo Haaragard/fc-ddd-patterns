@@ -1,20 +1,30 @@
 <?php declare(strict_types=1);
 
-namespace App\Entity;
+namespace App\Domain\Entity;
 
 use Exception;
 
-class Product
+class Product extends BaseEntity
 {
     /**
      * @throws Exception
      */
     public function __construct(
-        private readonly string $id,
+        private ?string $id = null,
         private string $name,
         private int $price
     ) {
         $this->validate();
+    }
+
+    public function setId(mixed $id): void
+    {
+        $this->id = $id;
+    }
+
+    public function getId(): ?string
+    {
+        return $this->id;
     }
 
     public function getName(): string
@@ -42,10 +52,6 @@ class Product
      */
     private function validate(): void
     {
-        if (empty($this->id)) {
-            throw new Exception('Id is required');
-        }
-
         if (empty($this->name)) {
             throw new Exception('Name is required');
         }
@@ -53,5 +59,14 @@ class Product
         if ($this->price <= 0) {
             throw new Exception('Price must be greater than zero');
         }
+    }
+
+    public function toArray(): array
+    {
+        return [
+            'id' => $this->getId(),
+            'name' => $this->getName(),
+            'price' => $this->getPrice(),
+        ];
     }
 }

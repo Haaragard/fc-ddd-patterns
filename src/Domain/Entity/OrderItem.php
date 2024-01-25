@@ -1,22 +1,27 @@
 <?php declare(strict_types=1);
 
-namespace App\Entity;
+namespace App\Domain\Entity;
 
 use Exception;
 
-class OrderItem
+class OrderItem extends BaseEntity
 {
     /**
      * @throws Exception
      */
     public function __construct(
-        private readonly string $id,
+        private ?string $id = null,
         private readonly string $productId,
         private readonly string $name,
         private readonly int    $quantity,
         private readonly int $price
     ) {
         $this->validate();
+    }
+
+    public function getId(): ?string
+    {
+        return $this->id;
     }
 
     public function getQuantity(): int

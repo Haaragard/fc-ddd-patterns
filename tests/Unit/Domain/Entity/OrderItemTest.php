@@ -1,7 +1,8 @@
 <?php declare(strict_types=1);
 
-namespace Tests\Unit\Entity;
-use App\Entity\OrderItem;
+namespace Tests\Unit\Domain\Entity;
+
+use App\Domain\Entity\OrderItem;
 use PHPUnit\Framework\TestCase;
 
 class OrderItemTest extends TestCase

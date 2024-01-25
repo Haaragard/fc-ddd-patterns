@@ -1,29 +1,12 @@
 <?php declare(strict_types=1);
 
-namespace Tests\Unit\Entity;
+namespace Tests\Unit\Domain\Entity;
 
-use App\Entity\Product;
+use App\Domain\Entity\Product;
 use PHPUnit\Framework\TestCase;
 
 class ProductTest extends TestCase
 {
-    public function test_should_throw_error_when_id_is_empty(): void
-    {
-        $this->expectException(\Exception::class);
-        $this->expectExceptionMessage('Id is required');
-
-        // Arrange
-
-        // Act
-        new Product(
-            id: '',
-            name: 'Product 1',
-            price: 10
-        );
-
-        // Assert
-    }
-
     public function test_should_throw_error_when_name_is_empty(): void
     {
         $this->expectException(\Exception::class);
@@ -75,6 +58,38 @@ class ProductTest extends TestCase
         // Assert
     }
 
+    public function test_should_set_id(): void
+    {
+        // Arrange
+        $product = new Product(
+            id: null,
+            name: 'Product 1',
+            price: 10
+        );
+
+        // Act
+        $product->setId('2');
+
+        // Assert
+        $this->assertEquals('2', $product->getId());
+    }
+
+    public function test_should_get_id(): void
+    {
+        // Arrange
+        $product = new Product(
+            id: '1',
+            name: 'Product 1',
+            price: 10
+        );
+
+        // Act
+        $productId = $product->getId();
+
+        // Assert
+        $this->assertEquals('1', $product->getId());
+    }
+
     public function test_should_change_name(): void
     {
         // Arrange
@@ -105,5 +120,25 @@ class ProductTest extends TestCase
 
         // Assert
         $this->assertEquals(30, $product->getPrice());
+    }
+
+    public function test_should_to_array(): void
+    {
+        // Arrange
+        $product = new Product(
+            id: '1',
+            name: 'Product 1',
+            price: 10
+        );
+
+        // Act
+        $productArray = $product->toArray();
+
+        // Assert
+        $this->assertEquals([
+            'id' => '1',
+            'name' => 'Product 1',
+            'price' => 10,
+        ], $productArray);
     }
 }

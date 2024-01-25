@@ -1,10 +1,10 @@
 <?php
 
-namespace App\Service;
+namespace App\Domain\Service;
 
-use App\Entity\Customer;
-use App\Entity\Order;
-use App\Entity\OrderItem;
+use App\Domain\Entity\Customer;
+use App\Domain\Entity\Order;
+use App\Domain\Entity\OrderItem;
 use Exception;
 
 class OrderService
