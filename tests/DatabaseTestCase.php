@@ -16,17 +16,22 @@ abstract class DatabaseTestCase extends TestCase
 
     public static function tearDownAfterClass(): void
     {
-        self::destroyDatabase();
+        self::closeDatabase();
     }
 
     private static function initDatabase(): void
     {
         self::$entityManager = get_entity_manager();
+        $connection = self::$entityManager->getConnection();
+
+        if (! $connection->isConnected()) {
+            $connection->connect();
+        }
     }
 
-    private static function destroyDatabase(): void
+    private static function closeDatabase(): void
     {
-        self::$entityManager->close();
+        self::$entityManager->getConnection()->close();
     }
 
     protected function setUp(): void
