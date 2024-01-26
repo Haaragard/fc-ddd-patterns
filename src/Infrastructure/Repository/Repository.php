@@ -22,9 +22,7 @@ abstract class Repository implements RepositoryInterface
         $this->entityManager->persist($model);
         $this->flush();
 
-        if (method_exists(get_class($entity), 'setId')) {
-            $entity->setId($model->getId());
-        }
+        $entity->setId($model->getId());
     }
 
     public function update(BaseEntity $entity): void
