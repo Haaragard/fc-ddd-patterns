@@ -17,6 +17,26 @@ readonly class Address
         $this->validate();
     }
 
+    public function getStreet(): string
+    {
+        return $this->street;
+    }
+
+    public function getNumber(): int
+    {
+        return $this->number;
+    }
+
+    public function getZip(): string
+    {
+        return $this->zip;
+    }
+
+    public function getCity(): string
+    {
+        return $this->city;
+    }
+
     /**
      * @throws Exception
      */
@@ -37,5 +57,15 @@ readonly class Address
         if (empty($this->city)) {
             throw new Exception("City is required");
         }
+    }
+
+    public function toArray(): array
+    {
+        return [
+            'street' => $this->getStreet(),
+            'number' => $this->getNumber(),
+            'zip' => $this->getZip(),
+            'city' => $this->getCity(),
+        ];
     }
 }

@@ -25,14 +25,54 @@ class Customer extends BaseEntity
         return $this->id;
     }
 
+    public function setId(mixed $id): void
+    {
+        $this->id = $id;
+    }
+
     public function getName(): string
     {
         return $this->name;
     }
 
+    public function setName(string $name): void
+    {
+        $this->name = $name;
+    }
+
     public function changeName(string $name): void
     {
         $this->name = $name;
+    }
+
+    public function getActive(): bool
+    {
+        return $this->active;
+    }
+
+    public function setActive(bool $active): void
+    {
+        $this->active = $active;
+    }
+
+    public function getAddress(): ?Address
+    {
+        return $this->address;
+    }
+
+    public function setAddress(Address $address): void
+    {
+        $this->address = $address;
+    }
+
+    public function getRewardPoints(): int
+    {
+        return $this->rewardPoints;
+    }
+
+    public function setRewardPoints(int $rewardPoints): void
+    {
+        $this->rewardPoints = $rewardPoints;
     }
 
     /**
@@ -57,16 +97,6 @@ class Customer extends BaseEntity
         return $this->active;
     }
 
-    public function setAddress(Address $address): void
-    {
-        $this->address = $address;
-    }
-
-    public function getRewardPoints(): int
-    {
-        return $this->rewardPoints;
-    }
-
     /**
      * @throws Exception
      */
@@ -84,12 +114,19 @@ class Customer extends BaseEntity
      */
     private function validate(): void
     {
-        if (empty($this->id)) {
-            throw new Exception("Id is required");
-        }
-
         if (empty($this->name)) {
             throw new Exception("Name is required");
         }
+    }
+
+    public function toArray(): array
+    {
+        return [
+            'id' => $this->getId(),
+            'name' => $this->getName(),
+            'address' => $this->getAddress()->toArray(),
+            'active' => $this->getActive(),
+            'reward_points' => $this->getRewardPoints(),
+        ];
     }
 }
