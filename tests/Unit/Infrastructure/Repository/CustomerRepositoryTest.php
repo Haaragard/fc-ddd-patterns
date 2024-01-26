@@ -4,7 +4,6 @@ namespace Tests\Unit\Infrastructure\Repository;
 
 use App\Domain\Entity\Address;
 use App\Domain\Entity\Customer;
-use App\Domain\Entity\Product;
 use App\Domain\Repository\CustomerRepositoryInterface;
 use App\Infrastructure\Repository\CustomerRepository;
 use Tests\DatabaseTestCase;
