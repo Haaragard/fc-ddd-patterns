@@ -19,16 +19,16 @@
     "config": {
         "platform": {
             "php": "8.2"
-        },
-        "scripts": {
-            "test": "./vendor/bin/phpunit ./tests"
         }
     },
-  "require": {
+    "require": {
     "ext-sqlite3": "*",
     "ext-pdo": "*",
     "doctrine/orm": "^2.17",
     "symfony/cache": "^7.0",
     "ramsey/uuid-doctrine": "^2.0"
-  }
+    },
+    "scripts": {
+        "test": "./vendor/bin/phpunit ./tests --bootstrap ./config/bootstrap.php"
+    }
 }
