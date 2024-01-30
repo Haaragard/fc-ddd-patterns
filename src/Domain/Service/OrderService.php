@@ -17,7 +17,7 @@ class OrderService
     {
         return array_reduce(
             $orders,
-            fn(int $carry, Order $item) => $carry + $item->total(),
+            fn(int $carry, Order $order) => $carry + $order->total(),
             0
         );
     }
@@ -34,7 +34,7 @@ class OrderService
             throw new Exception('Order must have at least one item');
         }
 
-        $order = new Order(uniqid('order-'), $customer->getId(), $items);
+        $order = new Order(null, $customer, $items);
         $customer->addRewardPoints($order->total()/2);
 
         return $order;
