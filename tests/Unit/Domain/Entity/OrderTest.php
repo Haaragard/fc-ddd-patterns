@@ -2,85 +2,49 @@
 
 namespace Tests\Unit\Domain\Entity;
 
+use App\Domain\Entity\Customer;
 use App\Domain\Entity\Order;
 use App\Domain\Entity\OrderItem;
+use App\Domain\Entity\Product;
 use PHPUnit\Framework\TestCase;
 
 class OrderTest extends TestCase
 {
-    public function test_should_throw_error_when_id_is_empty(): void
-    {
-        $this->expectException(\Exception::class);
-        $this->expectExceptionMessage('Id is required');
-
-        // Arrange
-
-        $orderItem1 = new OrderItem(
-            id: '1',
-            productId: '1',
-            name: 'Order Item 1',
-            quantity: 1,
-            price: 100
-        );
-
-
-        // Act
-        new Order(
-            '',
-            '123',
-            [$orderItem1],
-        );
-
-        // Assert
-    }
-
-    public function test_should_throw_error_when_customer_id_is_empty(): void
-    {
-        $this->expectException(\Exception::class);
-        $this->expectExceptionMessage('Customer Id is required');
-
-        // Arrange
-        $orderItem1 = new OrderItem(
-            id: '1',
-            productId: '1',
-            name: 'Order Item 1',
-            quantity: 1,
-            price: 100
-        );
-
-        // Act
-        new Order(
-            '1',
-            '',
-            [$orderItem1],
-        );
-
-        // Assert
-    }
-
     public function test_should_throw_error_when_order_items_are_empty(): void
     {
         $this->expectException(\Exception::class);
         $this->expectExceptionMessage('Items are required');
 
-        // Arrange
-
-        // Act
-        new Order(
-            '1',
-            '123',
-            [],
+        $customer = new Customer(
+            'c1',
+            'Customer 1',
+            true
         );
 
-        // Assert
+        new Order(
+            '1',
+            $customer,
+            [],
+        );
     }
 
     public function test_should_calculate_total(): void
     {
-        // Arrange
+        $product = new Product(
+            id: 'p1',
+            name: 'product 1',
+            price: 10
+        );
+
+        $product2 = new Product(
+            id: 'p2',
+            name: 'product 2',
+            price: 20
+        );
+
         $orderItem1 = new OrderItem(
             id: '1',
-            productId: '1',
+            product: $product,
             name: 'Order Item 1',
             quantity: 3,
             price: 100
@@ -88,16 +52,21 @@ class OrderTest extends TestCase
 
         $orderItem2 = new OrderItem(
             id: '2',
-            productId: '1',
+            product: $product2,
             name: 'Order Item 2',
             quantity: 2,
             price: 200
         );
 
-        // Act
+        $customer = new Customer(
+            'c1',
+            'Customer 1',
+            true
+        );
+
         $order = new Order(
             '1',
-            '123',
+            $customer,
             [$orderItem1, $orderItem2],
         );
 
