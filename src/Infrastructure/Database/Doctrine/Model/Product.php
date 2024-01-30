@@ -22,7 +22,7 @@ class Product extends BaseModel
     private UuidInterface|string $id;
     #[ORM\Column(type: 'string')]
     private string $name;
-    #[ORM\Column(type: 'float')]
+    #[ORM\Column(type: 'integer')]
     private int $price;
 
     public function getId(): string
