@@ -1,6 +1,6 @@
 <?php declare(strict_types=1);
 
-namespace App\Infrastructure\Database\Doctrine\Model;
+namespace App\Infrastructure\Checkout\Model\Doctrine;
 
 use App\Domain\Checkout\Entity\Order as OrderEntity;
 use App\Domain\Checkout\Entity\OrderItem as OrderItemEntity;
@@ -8,7 +8,8 @@ use App\Domain\Customer\Entity\Customer as CustomerEntity;
 use App\Domain\Customer\ValueObject\Address;
 use App\Domain\Product\Entity\Product as ProductEntity;
 use App\Domain\Shared\Entity\BaseEntity;
-use App\Infrastructure\Database\BaseModel;
+use App\Infrastructure\Customer\Model\Doctrine\Customer;
+use App\Infrastructure\Shared\Model\BaseModel;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;

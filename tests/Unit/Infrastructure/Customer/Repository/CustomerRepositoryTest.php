@@ -1,11 +1,11 @@
 <?php declare(strict_types=1);
 
-namespace Tests\Unit\Infrastructure\Repository;
+namespace Tests\Unit\Infrastructure\Customer\Repository;
 
 use App\Domain\Customer\Entity\Customer;
 use App\Domain\Customer\Repository\CustomerRepositoryInterface;
 use App\Domain\Customer\ValueObject\Address;
-use App\Infrastructure\Repository\CustomerRepository;
+use App\Infrastructure\Customer\Repository\Doctrine\CustomerRepository;
 use Tests\DatabaseTestCase;
 
 class CustomerRepositoryTest extends DatabaseTestCase

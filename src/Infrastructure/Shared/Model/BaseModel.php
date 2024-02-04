@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Infrastructure\Database;
+namespace App\Infrastructure\Shared\Model;
 
 use App\Domain\Shared\Entity\BaseEntity;
 

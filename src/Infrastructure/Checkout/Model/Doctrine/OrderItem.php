@@ -1,10 +1,11 @@
 <?php declare(strict_types=1);
 
-namespace App\Infrastructure\Database\Doctrine\Model;
+namespace App\Infrastructure\Checkout\Model\Doctrine;
 
 use App\Domain\Checkout\Entity\OrderItem as OrderItemEntity;
 use App\Domain\Shared\Entity\BaseEntity;
-use App\Infrastructure\Database\BaseModel;
+use App\Infrastructure\Product\Model\Doctrine\Product;
+use App\Infrastructure\Shared\Model\BaseModel;
 use Doctrine\ORM\Mapping as ORM;
 use Ramsey\Uuid\Doctrine\UuidGenerator;
 use Ramsey\Uuid\UuidInterface;

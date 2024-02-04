@@ -1,6 +1,6 @@
 <?php declare(strict_types=1);
 
-namespace Tests\Unit\Infrastructure\Repository;
+namespace Tests\Unit\Infrastructure\Checkout\Repository;
 
 use App\Domain\Checkout\Entity\Order;
 use App\Domain\Checkout\Entity\OrderItem;
@@ -10,9 +10,9 @@ use App\Domain\Customer\Repository\CustomerRepositoryInterface;
 use App\Domain\Customer\ValueObject\Address;
 use App\Domain\Product\Entity\Product;
 use App\Domain\Product\Repository\ProductRepositoryInterface;
-use App\Infrastructure\Repository\CustomerRepository;
-use App\Infrastructure\Repository\OrderRepository;
-use App\Infrastructure\Repository\ProductRepository;
+use App\Infrastructure\Checkout\Repository\Doctrine\OrderRepository;
+use App\Infrastructure\Customer\Repository\Doctrine\CustomerRepository;
+use App\Infrastructure\Product\Repository\Doctrine\ProductRepository;
 use Tests\DatabaseTestCase;
 
 class OrderRepositoryTest extends DatabaseTestCase

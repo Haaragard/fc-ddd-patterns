@@ -1,10 +1,10 @@
 <?php
 
-namespace App\Infrastructure\Repository;
+namespace App\Infrastructure\Shared\Repository;
 
 use App\Domain\Shared\Entity\BaseEntity;
 use App\Domain\Shared\Repository\RepositoryInterface;
-use App\Infrastructure\Database\BaseModel;
+use App\Infrastructure\Shared\Model\BaseModel;
 use Doctrine\ORM\EntityManagerInterface;
 
 abstract class Repository implements RepositoryInterface

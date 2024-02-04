@@ -1,10 +1,10 @@
 <?php declare(strict_types=1);
 
-namespace Tests\Unit\Infrastructure\Repository;
+namespace Tests\Unit\Infrastructure\Product\Repository;
 
 use App\Domain\Product\Entity\Product;
 use App\Domain\Product\Repository\ProductRepositoryInterface;
-use App\Infrastructure\Repository\ProductRepository;
+use App\Infrastructure\Product\Repository\Doctrine\ProductRepository;
 use Tests\DatabaseTestCase;
 
 class ProductRepositoryTest extends DatabaseTestCase

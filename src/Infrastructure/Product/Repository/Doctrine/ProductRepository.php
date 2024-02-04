@@ -1,9 +1,10 @@
 <?php
 
-namespace App\Infrastructure\Repository;
+namespace App\Infrastructure\Product\Repository\Doctrine;
 
 use App\Domain\Product\Repository\ProductRepositoryInterface;
-use App\Infrastructure\Database\Doctrine\Model\Product;
+use App\Infrastructure\Product\Model\Doctrine\Product;
+use App\Infrastructure\Shared\Repository\Repository;
 
 class ProductRepository extends Repository implements ProductRepositoryInterface
 {

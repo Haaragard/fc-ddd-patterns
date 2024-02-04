@@ -6,7 +6,12 @@ use Doctrine\ORM\ORMSetup;
 
 \Doctrine\DBAL\Types\Type::addType('uuid', 'Ramsey\Uuid\Doctrine\UuidType');
 
-$paths = [BASE_PATH . '/src/Infrastructure/Database/Doctrine/Model'];
+$paths = [
+    BASE_PATH . '/src/Infrastructure/Checkout/Model/Doctrine',
+    BASE_PATH . '/src/Infrastructure/Customer/Model/Doctrine',
+    BASE_PATH . '/src/Infrastructure/Product/Model/Doctrine',
+
+];
 $isDevMode = in_array($_ENV['APP_ENV'], ['develop', 'testing']);
 
 $dbParams = [

@@ -1,11 +1,11 @@
 <?php declare(strict_types=1);
 
-namespace App\Infrastructure\Database\Doctrine\Model;
+namespace App\Infrastructure\Customer\Model\Doctrine;
 
 use App\Domain\Customer\Entity\Customer as CustomerEntity;
 use App\Domain\Customer\ValueObject\Address;
 use App\Domain\Shared\Entity\BaseEntity;
-use App\Infrastructure\Database\BaseModel;
+use App\Infrastructure\Shared\Model\BaseModel;
 use Doctrine\ORM\Mapping as ORM;
 use Ramsey\Uuid\Doctrine\UuidGenerator;
 use Ramsey\Uuid\UuidInterface;
