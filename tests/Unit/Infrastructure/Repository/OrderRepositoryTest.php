@@ -2,14 +2,14 @@
 
 namespace Tests\Unit\Infrastructure\Repository;
 
-use App\Domain\Entity\Address;
-use App\Domain\Entity\Customer;
-use App\Domain\Entity\Order;
-use App\Domain\Entity\OrderItem;
-use App\Domain\Entity\Product;
-use App\Domain\Repository\CustomerRepositoryInterface;
-use App\Domain\Repository\OrderRepositoryInterface;
-use App\Domain\Repository\ProductRepositoryInterface;
+use App\Domain\Checkout\Entity\Order;
+use App\Domain\Checkout\Entity\OrderItem;
+use App\Domain\Checkout\Repository\OrderRepositoryInterface;
+use App\Domain\Customer\Entity\Customer;
+use App\Domain\Customer\Repository\CustomerRepositoryInterface;
+use App\Domain\Customer\ValueObject\Address;
+use App\Domain\Product\Entity\Product;
+use App\Domain\Product\Repository\ProductRepositoryInterface;
 use App\Infrastructure\Repository\CustomerRepository;
 use App\Infrastructure\Repository\OrderRepository;
 use App\Infrastructure\Repository\ProductRepository;

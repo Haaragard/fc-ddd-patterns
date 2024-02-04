@@ -2,8 +2,8 @@
 
 namespace App\Infrastructure\Repository;
 
-use App\Domain\Entity\BaseEntity;
-use App\Domain\Repository\RepositoryInterface;
+use App\Domain\Shared\Entity\BaseEntity;
+use App\Domain\Shared\Repository\RepositoryInterface;
 use App\Infrastructure\Database\BaseModel;
 use Doctrine\ORM\EntityManagerInterface;
 

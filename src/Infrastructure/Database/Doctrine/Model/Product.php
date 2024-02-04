@@ -2,8 +2,8 @@
 
 namespace App\Infrastructure\Database\Doctrine\Model;
 
-use App\Domain\Entity\BaseEntity;
-use App\Domain\Entity\Product as ProductEntity;
+use App\Domain\Product\Entity\Product as ProductEntity;
+use App\Domain\Shared\Entity\BaseEntity;
 use App\Infrastructure\Database\BaseModel;
 use Doctrine\ORM\Mapping as ORM;
 use Ramsey\Uuid\Doctrine\UuidGenerator;

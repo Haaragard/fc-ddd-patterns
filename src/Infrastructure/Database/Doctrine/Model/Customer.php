@@ -2,9 +2,9 @@
 
 namespace App\Infrastructure\Database\Doctrine\Model;
 
-use App\Domain\Entity\Address;
-use App\Domain\Entity\BaseEntity;
-use App\Domain\Entity\Customer as CustomerEntity;
+use App\Domain\Customer\Entity\Customer as CustomerEntity;
+use App\Domain\Customer\ValueObject\Address;
+use App\Domain\Shared\Entity\BaseEntity;
 use App\Infrastructure\Database\BaseModel;
 use Doctrine\ORM\Mapping as ORM;
 use Ramsey\Uuid\Doctrine\UuidGenerator;

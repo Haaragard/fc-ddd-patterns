@@ -2,8 +2,8 @@
 
 namespace App\Infrastructure\Database\Doctrine\Model;
 
-use App\Domain\Entity\BaseEntity;
-use App\Domain\Entity\OrderItem as OrderItemEntity;
+use App\Domain\Checkout\Entity\OrderItem as OrderItemEntity;
+use App\Domain\Shared\Entity\BaseEntity;
 use App\Infrastructure\Database\BaseModel;
 use Doctrine\ORM\Mapping as ORM;
 use Ramsey\Uuid\Doctrine\UuidGenerator;

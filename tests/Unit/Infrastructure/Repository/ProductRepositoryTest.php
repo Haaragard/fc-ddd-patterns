@@ -2,8 +2,8 @@
 
 namespace Tests\Unit\Infrastructure\Repository;
 
-use App\Domain\Entity\Product;
-use App\Domain\Repository\ProductRepositoryInterface;
+use App\Domain\Product\Entity\Product;
+use App\Domain\Product\Repository\ProductRepositoryInterface;
 use App\Infrastructure\Repository\ProductRepository;
 use Tests\DatabaseTestCase;
 

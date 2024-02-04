@@ -2,7 +2,7 @@
 
 namespace App\Infrastructure\Database;
 
-use App\Domain\Entity\BaseEntity;
+use App\Domain\Shared\Entity\BaseEntity;
 
 abstract class BaseModel
 {

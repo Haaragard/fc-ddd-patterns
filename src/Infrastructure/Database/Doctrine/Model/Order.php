@@ -2,12 +2,12 @@
 
 namespace App\Infrastructure\Database\Doctrine\Model;
 
-use App\Domain\Entity\Address;
-use App\Domain\Entity\BaseEntity;
-use App\Domain\Entity\Customer as CustomerEntity;
-use App\Domain\Entity\Order as OrderEntity;
-use App\Domain\Entity\OrderItem as OrderItemEntity;
-use App\Domain\Entity\Product as ProductEntity;
+use App\Domain\Checkout\Entity\Order as OrderEntity;
+use App\Domain\Checkout\Entity\OrderItem as OrderItemEntity;
+use App\Domain\Customer\Entity\Customer as CustomerEntity;
+use App\Domain\Customer\ValueObject\Address;
+use App\Domain\Product\Entity\Product as ProductEntity;
+use App\Domain\Shared\Entity\BaseEntity;
 use App\Infrastructure\Database\BaseModel;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;

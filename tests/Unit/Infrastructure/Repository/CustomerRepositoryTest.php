@@ -2,9 +2,9 @@
 
 namespace Tests\Unit\Infrastructure\Repository;
 
-use App\Domain\Entity\Address;
-use App\Domain\Entity\Customer;
-use App\Domain\Repository\CustomerRepositoryInterface;
+use App\Domain\Customer\Entity\Customer;
+use App\Domain\Customer\Repository\CustomerRepositoryInterface;
+use App\Domain\Customer\ValueObject\Address;
 use App\Infrastructure\Repository\CustomerRepository;
 use Tests\DatabaseTestCase;
 
