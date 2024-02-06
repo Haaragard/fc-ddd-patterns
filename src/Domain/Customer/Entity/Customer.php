@@ -8,16 +8,15 @@ use Exception;
 
 class Customer extends BaseEntity
 {
-    private ?Address $address = null;
-    private int $rewardPoints = 0;
-
     /**
      * @throws Exception
      */
     public function __construct(
         private ?string $id = null,
         private string $name,
-        private bool $active = true
+        private bool $active = true,
+        private int $rewardPoints = 0,
+        private ?Address $address = null
     ) {
         $this->validate();
     }

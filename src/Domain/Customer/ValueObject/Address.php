@@ -1,9 +1,11 @@
 <?php declare(strict_types=1);
 
 namespace App\Domain\Customer\ValueObject;
+
+use App\Domain\Shared\Entity\BaseEntity;
 use Exception;
 
-readonly class Address
+class Address extends BaseEntity
 {
     /**
      * @throws Exception
