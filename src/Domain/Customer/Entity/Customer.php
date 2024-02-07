@@ -2,6 +2,8 @@
 
 namespace App\Domain\Customer\Entity;
 
+use App\Domain\Customer\Event\AddressChangedEvent;
+use App\Domain\Customer\Event\CustomerCreatedEvent;
 use App\Domain\Customer\ValueObject\Address;
 use App\Domain\Shared\Entity\BaseEntity;
 use Exception;
@@ -66,6 +68,15 @@ class Customer extends BaseEntity
         $this->address = $address;
     }
 
+    public function changeAddress(Address $address): void
+    {
+        $this->address = $address;
+
+        dispatch_event(new AddressChangedEvent([
+            'customer' => $this,
+        ]));
+    }
+
     public function getRewardPoints(): int
     {
         return $this->rewardPoints;
@@ -108,6 +119,11 @@ class Customer extends BaseEntity
         }
 
         $this->rewardPoints += $value;
+    }
+
+    public function sendCreatedEvents(): void
+    {
+        dispatch_event(new CustomerCreatedEvent());
     }
 
     /**
