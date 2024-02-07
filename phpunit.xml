@@ -4,10 +4,9 @@
          backupGlobals="false"
          colors="true"
          processIsolation="false"
-         stopOnDefect="true"
-         displayDetailsOnTestsThatTriggerErrors="true"
-         displayDetailsOnTestsThatTriggerNotices="true"
-         displayDetailsOnTestsThatTriggerWarnings="true">
+         stopOnError="true"
+         stopOnFailure="true"
+         displayDetailsOnTestsThatTriggerErrors="true">
 
     <testsuites>
         <testsuite name="Project Test Suite">

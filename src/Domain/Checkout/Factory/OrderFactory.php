@@ -12,18 +12,18 @@ use Ramsey\Uuid\Uuid;
 
 class OrderFactory extends BaseFactory
 {
-    static function create(array $data = []): BaseEntity|Order
+    public static function create(array $data = []): BaseEntity|Order
     {
-        $orderItems = $data['order_items'];
-        foreach ($data['order_items'] as $orderitem) {
-            if (!($orderitem instanceof OrderItem)) {
-                $orderItems[] = OrderItemFactory::create($orderitem);
+        $orderItems = $data['order_items'] ?? [OrderItemFactory::create()];
+        foreach ($data['order_items'] as $orderItem) {
+            if (!($orderItem instanceof OrderItem)) {
+                $orderItems[] = OrderItemFactory::create($orderItem);
             }
         }
 
         $customer = $data['customer'];
         if (!($customer instanceof Customer)) {
-            $customer = CustomerFactory::create($customer);
+            $customer = CustomerFactory::create($customer ?? []);
         }
 
         return new Order(

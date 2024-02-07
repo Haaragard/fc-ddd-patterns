@@ -10,11 +10,11 @@ use Ramsey\Uuid\Uuid;
 
 class CustomerFactory extends BaseFactory
 {
-    static function create(array $data = []): BaseEntity|Customer
+    public static function create(array $data = []): BaseEntity|Customer
     {
-        $address = $data['address'];
+        $address = $data['address'] ?? [];
         if (!($address instanceof Address)) {
-            $address = AddressFactory::create($address);
+            $address = AddressFactory::create($address ?? []);
         }
 
         return new Customer(

@@ -11,10 +11,9 @@ use Ramsey\Uuid\Uuid;
 
 class OrderItemFactory extends BaseFactory
 {
-
-    static function create(array $data = []): BaseEntity|OrderItem
+    public static function create(array $data = []): BaseEntity|OrderItem
     {
-        $product = $data['product'];
+        $product = $data['product'] ?? [];
         if (!($product instanceof Product)) {
             $productData = [
                 'id' => $product['id'] ?? (string) Uuid::uuid4(),
