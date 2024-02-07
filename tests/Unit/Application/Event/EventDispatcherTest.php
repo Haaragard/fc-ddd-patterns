@@ -2,10 +2,10 @@
 
 namespace Tests\Unit\Domain\Shared\Event;
 
-use App\Domain\Shared\Event\EventDispatcher;
-use App\Domain\Shared\Event\EventDispatcherInterface;
-use App\Domain\Shared\Event\EventHandlerInterface;
-use App\Domain\Shared\Event\EventInterface;
+use App\Application\Event\EventDispatcher;
+use App\Application\Event\EventDispatcherInterface;
+use App\Application\Event\EventHandlerInterface;
+use App\Application\Event\EventInterface;
 use Tests\TestCase;
 
 class EventDispatcherTest extends TestCase

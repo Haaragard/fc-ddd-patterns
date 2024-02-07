@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Domain\Shared\Event;
+namespace App\Application\Event;
 
 use App\Domain\Shared\Enums\EventEnum;
 use DateTimeImmutable;
