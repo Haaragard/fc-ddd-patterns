@@ -2,6 +2,7 @@
     "name": "haaragard/fc-ddd-patterns",
     "description": "fullcycle ddd patterns",
     "type": "project",
+    "license": "MIT",
     "config": {
         "platform": {
             "php": "8.2"
